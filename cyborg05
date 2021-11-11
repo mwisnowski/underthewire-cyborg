@@ -1,0 +1,40 @@
+"The password for cyborg6 is the last name of the user who has logon hours set on their account PLUS the name of the file on the desktop."
+
+PS C:\users\cyborg5\desktop> ls                                                                                                                                                                                                                                                                                                                                                                                                                                                            Directory: C:\users\cyborg5\desktop
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        8/30/2018  10:45 AM              0 **_timer**
+
+we know we're looking for the logonhours, so we'll filter for users with that value set
+PS C:\users\cyborg5\desktop> get-aduser -filter 'logonhours -like "*"' -Properties logonHours
+
+
+DistinguishedName : CN=Administrator,CN=Users,DC=underthewire,DC=tech
+Enabled           : True
+GivenName         :
+logonHours        : {255, 255, 255, 255...}
+Name              : Administrator
+ObjectClass       : user
+ObjectGUID        : 427058c2-1d57-4e49-a23d-204865b502ae
+SamAccountName    : Administrator
+SID               : S-1-5-21-758131494-606461608-3556270690-500
+Surname           :
+UserPrincipalName :
+
+DistinguishedName : CN=Rowray\, Benny  \ ,OU=T-85,OU=X-Wing,DC=underthewire,DC=tech
+Enabled           : False
+GivenName         : Benny
+logonHours        : {0, 0, 0, 0...}
+Name              : Rowray, Benny
+ObjectClass       : user
+ObjectGUID        : c9aad4f3-3e4f-46b5-84db-2bb7105796dd
+SamAccountName    : Benny.Rowray
+SID               : S-1-5-21-758131494-606461608-3556270690-1647
+Surname           : Rowray
+UserPrincipalName : Benny.Rowray
+
+Because "administrator" doesn't have a last name, that leaves benny rowray
+
+cyborg6:rowray_timer

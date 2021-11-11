@@ -1,0 +1,29 @@
+"The password for cyborg7 is the decoded text of the string within the file on the desktop.
+NOTE:
+– The password is the last word of the string. For example, if it is “I like PowerShell”, the password would be “powershell”.
+– The password will be lowercase no matter how it appears on the screen.
+– There are no spaces in the answer."
+
+PS C:\users\cyborg6\desktop> ls
+
+
+    Directory: C:\users\cyborg6\desktop
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        8/30/2018  10:45 AM             32 cypher.txt
+
+
+PS C:\users\cyborg6\desktop> Get-Content .\cypher.txt
+YwB5AGIAZQByAGcAZQBkAGQAbwBuAA==
+
+seems to be base 64 due to use of upper and lower case characters, ending in two "==" and being 32 characters total, so let's store it first
+PS C:\users\cyborg6\desktop> $a = Get-Content .\cypher.txt
+
+and then decode it
+PS C:\users\cyborg6\desktop> [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($a))
+c y b e r g e d d o n
+PS C:\users\cyborg6\desktop>
+
+cyborb07:cybergeddon

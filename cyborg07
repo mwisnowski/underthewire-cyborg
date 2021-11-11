@@ -1,0 +1,16 @@
+"The password for cyborg8 is the executable name of a program that will start automatically when cyborg7 logs in."
+
+this took some searching, found some info here that was helpful:
+https://devblogs.microsoft.com/scripting/use-powershell-to-provide-startup-information/
+
+PS C:\users\cyborg7\desktop> get-ciminstance win32_startupcommand|select-object name,User|Format-list
+
+
+name : **SKYNET**
+User : underthewire\cyborg7
+
+
+
+PS C:\users\cyborg7\desktop>
+
+cyborg8:skynet

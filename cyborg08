@@ -1,0 +1,10 @@
+"The password for cyborg9 is the Internet zone that the picture on the desktop was downloaded from."
+
+we can find the zone by checking the zone.identifier data stream
+
+PS C:\users\cyborg8\desktop> GC -path .\1_qs5nwlcl7f_-SwNlQvOrAw.png -stream zone.identifier
+[ZoneTransfer]
+ZoneId=4
+PS C:\users\cyborg8\desktop>
+
+cyborg9:4
