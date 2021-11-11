@@ -1,0 +1,22 @@
+"The password for cyborg12 is located in the IIS log. The password is not Mozilla or Opera."
+
+default location for iis logs is
+c:\inetpub\logs\LogFiles
+so let's drill down that Path
+
+then we can use select-string and exclude results with "mozilla" or "opera":
+
+PS C:\users\cyborg11\desktop> GC C:\inetpub\logs\logfiles\w3svc1\u_ex160413.log |select-string -NotMatch -Pattern "Mozilla|Opera"
+
+#Software: Microsoft Internet Information Services 8.5
+#Version: 1.0
+#Date: 2016-04-13 04:14:01
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie)
+cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2016-04-13 04:14:12 W3SVC1 Century 172.31.45.65 GET / - 80 - 172.31.45.65 HTTP/1.1 LordHelmet/5.0+(CombTheDesert)+**Password+is:spaceballs** - -
+century.underthewire.tech 200 0 0 925 118 0
+
+
+PS C:\users\cyborg11\desktop>
+
+cyborg12:spaceballs

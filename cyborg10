@@ -1,0 +1,25 @@
+"The password for cyborg11 is the description of the Applocker Executable deny policy for ill_be_back.exe PLUS the name of the file on the desktop.""
+
+PS C:\users\cyborg10\desktop> ls
+
+
+    Directory: C:\users\cyborg10\desktop
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        8/30/2018  10:45 AM              0 **99**
+
+to get the effective applocker policy and print it out in an easily read block showing hte "description" content:
+https://docs.microsoft.com/en-us/powershell/module/applocker/get-applockerpolicy?view=windowsserver2019-ps&viewFallbackFrom=win10-ps
+
+PS C:\users\cyborg10\desktop> Get-applockerpolicy -effective -Xml|select-string -pattern 'description'
+
+<AppLockerPolicy Version="1"><RuleCollection Type="Appx" EnforcementMode="NotConfigured" /><RuleCollection Type="Dll" EnforcementMode="NotConfigured"
+/><RuleCollection Type="Exe" EnforcementMode="NotConfigured"><FilePathRule Id="cf7f9744-e5de-4189-8499-236666a32796"
+Name="C:\Users\cyborg10\Documents\ill_be_back.exe" Description="**terminated!**" UserOrGroupSid="S-1-1-0" Action="Deny"><Conditions><FilePathCondition
+Path="C:\Users\cyborg10\Documents\ill_be_back.exe" /></Conditions></FilePathRule></RuleCollection><RuleCollection Type="Msi"
+EnforcementMode="NotConfigured" /><RuleCollection Type="Script" EnforcementMode="NotConfigured" /></AppLockerPolicy>
+PS C:\users\cyborg10\desktop>
+
+cyborg11:terminated!99

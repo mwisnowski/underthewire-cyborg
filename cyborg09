@@ -1,0 +1,30 @@
+"The password for cyborg10 is the first name of the user with the phone number of 876-5309 listed in Active Directory PLUS the name of the file on the desktop."
+
+PS C:\users\cyborg9\desktop> ls                                                                                                                                                                                                                                                                                                                                                                                                                                                            Directory: C:\users\cyborg9\desktop
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        8/30/2018  10:45 AM              0 99
+
+pretty easy, we'll just filter for users with a telephone number, and show that property to confirm it's the right number
+PS C:\users\cyborg9\desktop> get-aduser -filter 'telephoneNumber -like "*876*"' -Properties telephoneNumber
+
+
+DistinguishedName : CN=Garick\, Onita  \ ,OU=T-65,OU=X-Wing,DC=underthewire,DC=tech
+Enabled           : False
+GivenName         : **Onita**
+Name              : Garick, Onita
+ObjectClass       : user
+ObjectGUID        : 5fc5bb5b-272a-4b70-877a-ed774029e247
+SamAccountName    : Onita.Garick
+SID               : S-1-5-21-758131494-606461608-3556270690-2124
+Surname           : Garick
+telephoneNumber   : 876-5309
+UserPrincipalName : Onita.Garick
+
+
+
+PS C:\users\cyborg9\desktop>
+
+cyborg10:onita99

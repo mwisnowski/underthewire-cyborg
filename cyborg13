@@ -1,0 +1,34 @@
+"The password cyborg14 is the number of days the refresh interval is set to for DNS aging for the underthewire.tech zone PLUS the name of the file on the desktop."
+
+PS C:\users\cyborg13\desktop> ls
+
+
+    Directory: C:\users\cyborg13\desktop
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        8/30/2018  10:45 AM              0 **_days**
+
+
+PS C:\users\cyborg13\desktop> Get-DNSServerZoneAging -Name udnerthewire.tech
+Get-DNSServerZoneAging : Failed to get aging properties of zone udnerthewire.tech on server UTW.
+At line:1 char:1
++ Get-DNSServerZoneAging -Name udnerthewire.tech
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (udnerthewire.tech:root/Microsoft/...ServerZoneAging) [Get-DnsServerZoneAging], CimException
+    + FullyQualifiedErrorId : WIN32 9601,Get-DnsServerZoneAging
+
+PS C:\users\cyborg13\desktop> Get-DNSServerZoneAging -Name underthewire.tech
+
+
+ZoneName             : underthewire.tech
+AgingEnabled         : True
+AvailForScavengeTime : 9/21/2018 10:00:00 AM
+**RefreshInterval      : 22.00:00:00**
+NoRefreshInterval    : 7.00:00:00
+ScavengeServers      :
+
+This is read as [days].[hours]:[minutes]:[seconds]
+
+cyborg14:22_days
