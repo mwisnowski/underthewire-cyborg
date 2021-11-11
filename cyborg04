@@ -1,0 +1,30 @@
+"The password for cyborg5 is the PowerShell module name with a version number of 8.9.8.9 PLUS the name of the file on the desktop."
+
+PS C:\users\cyborg4\desktop> ls
+
+
+    Directory: C:\users\cyborg4\desktop
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        8/30/2018  10:45 AM              0 **_eggs**
+
+
+PS C:\users\cyborg4\desktop> get-module -listavailable | where {$_.version -like "*8.9.8.9*"
+>> }
+>>
+PS C:\users\cyborg4\desktop> get-module -listavailable | where {$_.version -like "*8.9.8.9*"}
+
+
+    Directory: C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+
+
+ModuleType Version    Name                                ExportedCommands
+---------- -------    ----                                ----------------
+Manifest   8.9.8.9    **bacon**                               Get-bacon
+
+
+PS C:\users\cyborg4\desktop>
+
+cyborg5:bacon_eggs

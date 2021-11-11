@@ -1,0 +1,24 @@
+"The password for cyborg3 is the host A record IP address for CYBORG718W100N PLUS the name of the file on the desktop."
+
+PS C:\users\cyborg2\desktop> ls
+
+
+    Directory: C:\users\cyborg2\desktop
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        8/30/2018  10:45 AM              0 **_ipv4**
+
+we have the hostname, so we just need to resolve it against dns
+
+PS C:\users\cyborg2\desktop> resolve-dnsname CYBORG718W100N
+
+Name                                           Type   TTL   Section    IPAddress
+----                                           ----   ---   -------    ---------
+CYBORG718W100N.underthewire.tech               A      3600  Answer     **172.31.45.167**
+
+
+PS C:\users\cyborg2\desktop>
+
+centuiry3:172.31.45.167_ipv4
