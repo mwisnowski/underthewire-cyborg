@@ -1,0 +1,20 @@
+"The password for cyborg2 is the state that the user Chris Rogers is from as stated within Active Directory.""
+
+pretty easy, we we have the user, we just the state, which is under the property "st"
+PS C:\users\cyborg1\desktop> Get-adUser -Filter 'name -like "*rogers*"' -Properties st                                                                                                                                                                                                                                                                                                                                                                                                 DistinguishedName : CN=Rogers\, Chris\ ,OU=T-65,OU=X-Wing,DC=underthewire,DC=tech
+Enabled           : False
+GivenName         : Chris
+Name              : Rogers, Chris
+ObjectClass       : user
+ObjectGUID        : ee6450f8-cf70-4b1d-b902-a837839632bd
+SamAccountName    : chris.rogers
+SID               : S-1-5-21-758131494-606461608-3556270690-2177
+st                : **kansas**
+Surname           : Rogers
+UserPrincipalName : chris.rogers
+
+
+
+PS C:\users\cyborg1\desktop>
+
+cyborg2:kansas
